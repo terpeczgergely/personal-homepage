@@ -20,13 +20,17 @@
   border: 1px solid rgb(255, 255, 255, 0.2);
 }
 
+.logo {
+    cursor: pointer;
+  }
+  
 body {
   margin: 0;
   padding: 0;
   background-image: url("images/background.jpg");
   background-size: cover;
   background-position: center;
-  display: block;
+  display: flex;
   height: 100vh;
 }
 
@@ -37,54 +41,14 @@ p {
 }
 
 main {
-    display: block;
+    width: 100%;
+    display: flex;
     margin-top: 200px; /* Adjust the value to match the height of your navbar */
-    margin-left: 300px; /* Adjust the value to match the left padding of your navbar */
-    margin-right: 300px; /* Adjust the value to match the right padding of your navbar */
+    margin-left: 200px; /* Adjust the value to match the left padding of your navbar */
+    margin-right: 200px; /* Adjust the value to match the right padding of your navbar */
   }
 
-li,
-a,
-button {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: #edf0f1;
-  text-decoration: none;
-}
 
-.logo {
-  cursor: pointer;
-}
-
-
-li {
-  list-style: none;
-  display: inline-block;
-  padding: 0px 1.25rem;
-}
-
-li a {
-  position: relative; /* Add position relative */
-  transition: padding-bottom 0.3s ease; /* Add transition for padding change */
-  padding-bottom: 5px; /* Initial padding for space before line */
-}
-
-.nav_links li a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0; /* Start position of the line */
-  width: 0; /* Initial width of the line */
-  height: 2px; /* Height of the line */
-  background-color: #edf0f1; /* Color of the line */
-  transition: width 0.3s ease; /* Transition for width change */
-}
-
-.nav_links li a:hover::before {
-  width: 100%; /* Width of the line on hover */
-  opacity: 1;
-}
 button {
   padding: 9px 25px;
   background-color: rgb(3, 11, 53);
@@ -94,7 +58,9 @@ button {
   transition: all 0.3s ease 0s;
 }
 
-
+button:hover {
+    background-color: rgba(15, 2, 199, 0.8);
+  }
 
 nav {
   display: flex;
@@ -115,12 +81,51 @@ nav {
   transition: background-color 0.3s ease; /* Transition for background color change */
 }
 
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0px 1.25rem;
+}
+
+li a {
+  position: relative; /* Add position relative */
+  transition: padding-bottom 0.3s ease; /* Add transition for padding change */
+  padding-bottom: 5px; /* Initial padding for space before line */
+}
+
 /* Adjust the opacity of the navigation links */
 .nav_links li a {
   color: #edf0f1; /* Change color to contrast with the navbar background */
   opacity: 1; /* Initial opacity */
   transition: opacity 0.3s ease; /* Transition for opacity change */
 }
+
+.nav_links li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start position of the line */
+    width: 0; /* Initial width of the line */
+    height: 2px; /* Height of the line */
+    background-color: #edf0f1; /* Color of the line */
+    transition: width 0.3s ease; /* Transition for width change */
+  }
+  
+  .nav_links li a:hover::before {
+    width: 100%; /* Width of the line on hover */
+    opacity: 1;
+  }
 
 /* Change opacity of links when navbar is scrolled */
 .navbar-scrolled {
@@ -136,13 +141,6 @@ nav {
 .navbar-scrolled .nav_links li a {
   opacity: 0.7; /* Reduce opacity of links when navbar is scrolled */
 }
-
-
-
-button:hover {
-  background-color: rgba(15, 2, 199, 0.8);
-}
-
 
 footer {
     position: fixed;
@@ -161,6 +159,31 @@ footer {
 footer li {
     font-size: 1rem;
     padding: 0 5rem;
+}
+
+.home-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Vertically center items */
+}
+
+.home-wrapper img {
+    max-width: 50%; /* Adjust the width of the image */
+    align-self: flex-start;
+    padding-right: 100px;
+}
+
+.typewriter .text {
+    position: relative;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+#introduction {
+    width: 50%; /* Adjust the width of the introduction text */
+    /*padding: 0 20px; /* Add some padding for spacing */
 }
 
 h1 {
