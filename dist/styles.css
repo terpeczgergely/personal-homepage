@@ -1,10 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&family=Roboto:wght@300;500;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&family=Roboto:wght@300;500;900&display=swap");
 
 ::root {
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px black;
+  background-color: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(3, 11, 53);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  height: 100vh;
+}
+
+p {
+    color: rgb(150, 150, 255);
+    font-size: 4rem;
+    font-style: "Montserrat", sans-serif;
+}
+
+main {
+    display: block;
+    margin-top: 200px; /* Adjust the value to match the height of your navbar */
+    margin-left: 300px; /* Adjust the value to match the left padding of your navbar */
+    margin-right: 300px; /* Adjust the value to match the right padding of your navbar */
+  }
+
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0px 1.25rem;
+}
+
+li a {
+  position: relative; /* Add position relative */
+  transition: padding-bottom 0.3s ease; /* Add transition for padding change */
+  padding-bottom: 5px; /* Initial padding for space before line */
+}
+
+.nav_links li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Start position of the line */
+  width: 0; /* Initial width of the line */
+  height: 2px; /* Height of the line */
+  background-color: #edf0f1; /* Color of the line */
+  transition: width 0.3s ease; /* Transition for width change */
+}
+
+.nav_links li a:hover::before {
+  width: 100%; /* Width of the line on hover */
+  opacity: 1;
+}
+button {
+  padding: 9px 25px;
+  background-color: rgb(3, 11, 53);
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  border-radius: 3.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 2rem 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Initial background color with transparency */
+  transition: background-color 0.3s ease; /* Transition for background color change */
+}
+
+/* Adjust the opacity of the navigation links */
+.nav_links li a {
+  color: #edf0f1; /* Change color to contrast with the navbar background */
+  opacity: 1; /* Initial opacity */
+  transition: opacity 0.3s ease; /* Transition for opacity change */
+}
+
+/* Change opacity of links when navbar is scrolled */
+.navbar-scrolled {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  );
+  backdrop-filter:blur(8px); /* Darken the background color when scrolled */
+}
+
+.navbar-scrolled .nav_links li a {
+  opacity: 0.7; /* Reduce opacity of links when navbar is scrolled */
+}
+
+
+
+button:hover {
+  background-color: rgba(15, 2, 199, 0.8);
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3rem;
+    font-size: 1rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+footer li {
+    font-size: 1rem;
+    padding: 0 5rem;
 }
 
 h1 {
-    color: rebeccapurple
+  color: rebeccapurple;
 }
